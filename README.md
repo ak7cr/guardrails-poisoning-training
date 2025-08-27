@@ -191,20 +191,6 @@ python advanced_focal_train.py
 - **Vector Accuracy**: 100% agreement with transformer on test cases
 - **Real-world Performance**: Excellent detection of various attack types
 
-## 🛡️ Security Coverage
-
-### Malicious Pattern Detection
-- **Prompt Injection**: "Ignore previous instructions", "Reveal system prompt"
-- **SQL Injection**: "'; DROP TABLE users; --", "UNION SELECT"
-- **XSS Attacks**: "<script>alert('xss')</script>", "javascript:"
-- **Command Injection**: "$(whoami)", "; cat /etc/passwd"
-- **Obfuscation**: Base64 encoded, URL encoded attacks
-
-### Benign Content Recognition
-- **Natural Questions**: "What is the weather?", "How do I learn?"
-- **Educational Content**: "Explain machine learning", "Study techniques"
-- **Business Communication**: "Thank you for help", "Please provide documentation"
-- **Technical Queries**: "What is cloud computing?", "How do smartphones work?"
 
 ## 🔧 Installation & Setup
 
