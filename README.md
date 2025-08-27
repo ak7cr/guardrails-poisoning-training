@@ -242,4 +242,3 @@ pip install pdfplumber PyPDF2 pandas  # For document processing
 
 ---
 
-*Built with ❤️ using advanced AI techniques - Vector embeddings + Transformer models for maximum speed and accuracy!*
