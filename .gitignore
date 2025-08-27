@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+uploads/
+*.log
+logs/
+
+# Model files (too large for git - download separately)
+text_guardrail_advanced_model/
+simple-gpu-detector/
+modernbert-prompt-detector/
+fast-modernbert-detector/
+
+# Large training datasets
+prompt_injection_dataset/
+text_guardrail_advanced/
+
+# Data files (moved to test/ folder)
+*.csv
+*.pdf
+!test/*.csv
+!test/*.pdf
+*.txt
+!sample_document.txt
+!README.md
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Flask
+instance/
+.webassets-cache
+
+# PyTorch
+*.pth
+*.pt
+
+# Temporary files
+tmp/
+temp/
