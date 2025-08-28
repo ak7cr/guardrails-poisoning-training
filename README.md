@@ -7,7 +7,6 @@
 
 ## 🎯 Core Features
 - **⚡ Ultra-fast classification** using FAISS vector similarity search
-- **🤖 AI fallback** with 99.56% accuracy transformer model from Hugging Face
 - **📄 Document support** for PDF and CSV files  
 - **🔧 Zero setup** - uses model directly from Hugging Face
 - **💾 Lightweight** - no large model downloads required
