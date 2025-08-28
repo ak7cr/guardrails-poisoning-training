@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """
+Update setup_models.py to use Hugging Face model instead of local training
+"""
+
+def update_setup_models_for_huggingface():
+    """Update setup_models.py to download from Hugging Face instead of training locally"""
+    
+    new_content = '''#!/usr/bin/env python3
+"""
 Automated model setup for Guardrails Poisoning Training System
 Downloads pre-trained model from Hugging Face instead of training locally
 """
@@ -33,7 +41,7 @@ def check_dependencies():
         print("❌ Missing required packages:")
         for pkg in missing:
             print(f"   - {pkg}")
-        print("\n📦 Install them with:")
+        print("\\n📦 Install them with:")
         print(f"   pip install {' '.join(missing)}")
         return False
     
@@ -65,7 +73,7 @@ def download_model_from_hf():
         
     except Exception as e:
         print(f"❌ Error downloading model: {str(e)}")
-        print("\n💡 Possible solutions:")
+        print("\\n💡 Possible solutions:")
         print("1. Check your internet connection")
         print("2. Make sure the model repository exists and is public")
         print("3. Try running: huggingface-cli login (if it's a private repo)")
@@ -138,35 +146,35 @@ def main():
     print("=" * 50)
     
     # Check dependencies
-    print("\n1️⃣ Checking dependencies...")
+    print("\\n1️⃣ Checking dependencies...")
     if not check_dependencies():
         return False
     
     print("✅ All dependencies are installed")
     
     # Download model from Hugging Face
-    print("\n2️⃣ Setting up model...")
+    print("\\n2️⃣ Setting up model...")
     if not download_model_from_hf():
         return False
     
     # Test the model
-    print("\n3️⃣ Testing model...")
+    print("\\n3️⃣ Testing model...")
     if not test_model():
         print("⚠️ Model test failed, but you can still proceed")
     
     # Check vector database
-    print("\n4️⃣ Checking vector database...")
+    print("\\n4️⃣ Checking vector database...")
     setup_vector_database()
     
-    print("\n🎉 Setup complete!")
-    print("\n📋 Available tools:")
+    print("\\n🎉 Setup complete!")
+    print("\\n📋 Available tools:")
     print("   • vector_guardrail.py - Main classification system")
     print("   • vector_text_test.py - Quick text testing")
     print("   • vector_document_classifier.py - PDF/CSV classification")
     print("   • speed_benchmark.py - Performance testing")
     
-    print("\n🔗 Model source: https://huggingface.co/ak7cr/guardrails-poisoning-training")
-    print("\n✨ Ready to classify prompts and documents!")
+    print("\\n🔗 Model source: https://huggingface.co/ak7cr/guardrails-poisoning-training")
+    print("\\n✨ Ready to classify prompts and documents!")
     
     return True
 
@@ -174,3 +182,13 @@ if __name__ == "__main__":
     success = main()
     if not success:
         sys.exit(1)
+'''
+    
+    # Write the updated file
+    with open("setup_models.py", "w", encoding="utf-8") as f:
+        f.write(new_content)
+    
+    print("✅ Updated setup_models.py to use Hugging Face model")
+
+if __name__ == "__main__":
+    update_setup_models_for_huggingface()
