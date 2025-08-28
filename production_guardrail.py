@@ -55,7 +55,7 @@ class FilteringResult:
 class ProductionSmartGuardrail:
     """Production-ready smart guardrail system"""
     
-    def __init__(self, model_path: str = "./simple-gpu-detector", 
+    def __init__(self, model_path: str = "ak7cr/guardrails-poisoning-training", 
                  default_strategy: FilteringStrategy = FilteringStrategy.BALANCED):
         """Initialize the production guardrail system"""
         
