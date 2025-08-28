@@ -1,6 +1,8 @@
 # Test Files for Vector Guardrail System
 
 This folder contains sample files for testing the vector-based classification system.
+simple_gpu_train.py
+
 
 ## 📁 Test Files
 
