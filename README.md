@@ -2,8 +2,7 @@
 
 **Lightning-fast prompt injection detection using vector embeddings with AI model fallback**
 
-🤗 **Model:** [ak7cr/guardrails-poisoning-training](https://huggingface.co/ak7cr/guardrails-poisoning-training)  
-🎯 **Accuracy:** 99.56% (Focal Loss trained)  
+🤗 **Model:** [ak7cr/guardrails-poisoning-training](https://huggingface.co/ak7cr/guardrails-poisoning-training)    
 ⚡ **Speed:** Vector-fast with transformer fallback  
 
 ## 🎯 Core Features
@@ -133,5 +132,4 @@ python speed_benchmark.py
 **Hugging Face Model:** `ak7cr/guardrails-poisoning-training`
 - **Base:** DistilBERT with Focal Loss (γ=2.0)
 - **Training:** 261,738 samples from jayavibhav/prompt-injection
-- **Accuracy:** 99.56% with differential learning rates
 - **Size:** 268MB (auto-cached by Hugging Face)
