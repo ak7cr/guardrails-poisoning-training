@@ -35,13 +35,22 @@
 ### **Install & Test (3 commands)**
 ```bash
 # Install dependencies
-pip install transformers torch sentence-transformers faiss-cpu pandas pdfplumber PyPDF2
+pip install -r requirements.txt
 
 # Setup and test model
 python setup_models.py
 
 # Test text classification
 python vector_text_test.py
+```
+
+### **Alternative: Manual Install**
+```bash
+# Core dependencies only
+pip install transformers torch sentence-transformers faiss-cpu pandas pdfplumber PyPDF2
+
+# Then setup
+python setup_models.py
 ```
 
 ### **Direct Usage (No Setup)**

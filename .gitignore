@@ -59,6 +59,7 @@ text_guardrail_advanced/
 !test/*.csv
 !test/*.pdf
 *.txt
+!requirements.txt
 !sample_document.txt
 !README.md
 
