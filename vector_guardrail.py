@@ -21,7 +21,7 @@ class VectorGuardrail:
                  model_name="all-MiniLM-L6-v2",
                  vector_db_path="./vector_database",
                  similarity_threshold=0.75,
-                 fallback_model_path="./text_guardrail_advanced_model"):
+                 fallback_model_path="ak7cr/guardrails-poisoning-training"):
         """
         Initialize Vector-based Guardrail
         
@@ -29,7 +29,7 @@ class VectorGuardrail:
             model_name: Sentence transformer model for embeddings
             vector_db_path: Path to store vector database
             similarity_threshold: Threshold for similarity matching
-            fallback_model_path: Path to full transformer model for uncertain cases
+            fallback_model_path: HF model name or local path for uncertain cases
         """
         self.model_name = model_name
         self.vector_db_path = Path(vector_db_path)
@@ -398,9 +398,18 @@ class VectorGuardrail:
             print("🔄 Loading fallback model for uncertain cases...")
             from transformers import AutoModelForSequenceClassification
             
-            self.fallback_tokenizer = AutoTokenizer.from_pretrained(self.fallback_model_path)
-            self.fallback_model = AutoModelForSequenceClassification.from_pretrained(
-                self.fallback_model_path)
+            # Check if it's a local path or HF model name
+            if os.path.exists(self.fallback_model_path) and os.path.isdir(self.fallback_model_path):
+                # Local model
+                print(f"📁 Loading local model: {self.fallback_model_path}")
+                model_source = self.fallback_model_path
+            else:
+                # Hugging Face model
+                print(f"🤗 Loading model from Hugging Face: {self.fallback_model_path}")
+                model_source = self.fallback_model_path
+            
+            self.fallback_tokenizer = AutoTokenizer.from_pretrained(model_source)
+            self.fallback_model = AutoModelForSequenceClassification.from_pretrained(model_source)
             self.fallback_model.to(self.device)
             self.fallback_model.eval()
             
